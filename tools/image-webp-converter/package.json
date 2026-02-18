@@ -1,0 +1,15 @@
+{
+  "name": "image-webp-converter",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "convert": "tsx webpConverter.ts",
+    "convert:quality": "npm run convert -- --quality"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "sharp": "^0.34.5",
+    "tsx": "^4.20.6"
+  }
+}

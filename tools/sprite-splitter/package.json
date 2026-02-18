@@ -1,0 +1,16 @@
+{
+  "name": "sprite-splitter-tool",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "split": "tsx sprite-splitter.ts",
+    "split:100": "npm run split -- --tileWidth 100 --tileHeight 100",
+    "split:200": "npm run split -- --tileWidth 200 --tileHeight 200"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "sharp": "^0.34.5",
+    "tsx": "^4.20.6"
+  }
+}

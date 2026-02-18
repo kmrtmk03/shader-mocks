@@ -1,0 +1,20 @@
+{
+  "name": "image-compile-tool",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "compress": "tsx imageCompile.ts",
+    "compress:50": "npm run compress -- --quality 50",
+    "compress:80": "npm run compress -- --quality 80",
+    "compress:90": "npm run compress -- --quality 90",
+    "compress:100": "npm run compress -- --quality 100"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "execa": "^9.6.0",
+    "pngquant-bin": "^9.0.0",
+    "sharp": "^0.34.5",
+    "tsx": "^4.20.6"
+  }
+}
