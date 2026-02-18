@@ -105,8 +105,10 @@ export const fragmentShader = /* glsl */ `
     uv.y = 1.0 - uv.y;
 
     // スクロールによるUVオフセット
-    // 500vh 分の仮想空間をスクロールで移動（4画面分下にオフセット）
-    uv.y += u_scroll * 4.0;
+    // SASS の container height (500vh) に対応
+    // 500vh = 画面5枚分 → 4画面分下にオフセット可能
+    const float SCROLL_RANGE = 4.0;
+    uv.y += u_scroll * SCROLL_RANGE;
 
     float time = u_time * 0.2;
 

@@ -34,9 +34,14 @@ const LiquidDrip = (): ReactElement => {
   }, [])
 
   useEffect(() => {
+    // スクロールとリサイズの両方を監視
     window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('resize', handleScroll, { passive: true })
     handleScroll() // 初期値を設定
-    return () => window.removeEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleScroll)
+    }
   }, [handleScroll])
 
   return (

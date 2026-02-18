@@ -25,6 +25,11 @@ const LiquidDripMesh = ({ scrollProgress }: Props) => {
   /**
    * ユニフォーム変数の初期値を定義
    * useMemo でメモ化し、不要な再生成を防ぐ
+   * 
+   * 注意: 依存配列が空なのは意図的な設計です。
+   * - ユニフォームオブジェクトの初期化は一度だけ行う
+   * - 実際の値の更新は useFrame 内で行う
+   * - これにより ShaderMaterial の再作成を防ぎパフォーマンスを維持
    */
   const uniforms = useMemo(
     () => ({
