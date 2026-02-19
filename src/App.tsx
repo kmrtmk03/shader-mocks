@@ -1,17 +1,18 @@
 import './App.sass'
 import type { ReactElement } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import LiquidDrip from './components/LiquidDrip'
+import { BrowserRouter } from 'react-router-dom'
+import ImageSlide from './components/ImageSlide'
 
+/**
+ * App メインコンポーネント
+ * ルーティングとグローバルな演出コンポーネントを管理します。
+ */
 function App(): ReactElement {
   return (
     <BrowserRouter>
       <main>
-        <Routes>
-          <Route path="/" element={<h1>App</h1>} />
-          {/* 液体垂れエフェクトページ */}
-          <Route path="/liquid" element={<LiquidDrip />} />
-        </Routes>
+        {/* 全ページ共通のスライドアニメーション演出 */}
+        <ImageSlide />
       </main>
     </BrowserRouter>
   )
