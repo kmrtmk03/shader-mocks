@@ -1,3 +1,5 @@
+@use '../styles/variables/z-index' as z
+
 .image-slide-container
   position: fixed
   top: 0
@@ -8,7 +10,7 @@
   justify-content: center
   align-items: flex-start // クリームが上から垂れるように上部固定
   pointer-events: none // 背後のUI操作を妨げないように
-  z-index: 100
+  z-index: z.$z-effect
   margin: 0
 
   .sliding-image
